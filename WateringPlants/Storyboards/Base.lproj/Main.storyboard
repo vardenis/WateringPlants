@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0dA-TF-CUg">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Растения-->
+        <scene sceneID="cm3-6W-Gjb">
+            <objects>
+                <tableViewController title="Растения" id="2se-pI-vui" customClass="ListOfPlantsViewController" customModule="WateringPlants" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Ro6-kw-fcr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="plantID" id="R8z-D2-DAI">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R8z-D2-DAI" id="KG3-oz-6uC">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="pjL-7l-RgN" kind="presentation" modalPresentationStyle="fullScreen" id="b81-5M-xT0"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2se-pI-vui" id="f9s-VX-iZG"/>
+                            <outlet property="delegate" destination="2se-pI-vui" id="38y-mQ-Arf"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Растения" image="drop" catalog="system" id="Xdz-zy-1Yq"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="lYn-7b-KGN"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z8P-Nq-Mhh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1444.9275362318842" y="171.42857142857142"/>
+        </scene>
+        <!--Plant Details View Controller-->
+        <scene sceneID="pE2-mE-i8A">
+            <objects>
+                <viewController id="pjL-7l-RgN" customClass="PlantDetailsViewController" customModule="WateringPlants" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0of-h3-PQz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateOfLastWatering" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaO-lm-KF4">
+                                <rect key="frame" x="20" y="184" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="textWatering" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAW-jq-ETK">
+                                <rect key="frame" x="20" y="249" width="374" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfC-xj-8OT">
+                                <rect key="frame" x="20" y="104" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FXS-WJ-XaB">
+                                <rect key="frame" x="116" y="328" width="182" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Полить растение">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Frr-Cf-JYf" kind="unwind" unwindAction="unwindFor:" id="6qM-6O-29w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLI-s2-E5V">
+                                <rect key="frame" x="98.5" y="428" width="217" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="&lt;- Вернуться назад">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="cancelButtonPressed" destination="pjL-7l-RgN" eventType="touchUpInside" id="jjZ-Ww-u8w"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Lgf-uF-xT5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XfC-xj-8OT" firstAttribute="leading" secondItem="Lgf-uF-xT5" secondAttribute="leading" constant="20" id="4Mi-Wv-7Xs"/>
+                            <constraint firstItem="RAW-jq-ETK" firstAttribute="leading" secondItem="Lgf-uF-xT5" secondAttribute="leading" constant="20" id="4V8-Qb-Cst"/>
+                            <constraint firstItem="dLI-s2-E5V" firstAttribute="centerX" secondItem="Lgf-uF-xT5" secondAttribute="centerX" id="4YZ-rm-caS"/>
+                            <constraint firstItem="RAW-jq-ETK" firstAttribute="top" secondItem="yaO-lm-KF4" secondAttribute="bottom" constant="41" id="7rm-bX-8wS"/>
+                            <constraint firstItem="XfC-xj-8OT" firstAttribute="top" secondItem="Lgf-uF-xT5" secondAttribute="top" constant="60" id="H8P-A8-SCw"/>
+                            <constraint firstItem="Lgf-uF-xT5" firstAttribute="trailing" secondItem="yaO-lm-KF4" secondAttribute="trailing" constant="20" id="NeT-R1-TqN"/>
+                            <constraint firstItem="FXS-WJ-XaB" firstAttribute="top" secondItem="RAW-jq-ETK" secondAttribute="bottom" constant="55" id="VmM-LR-RLx"/>
+                            <constraint firstItem="Lgf-uF-xT5" firstAttribute="trailing" secondItem="RAW-jq-ETK" secondAttribute="trailing" constant="20" id="eGK-yG-SMg"/>
+                            <constraint firstItem="yaO-lm-KF4" firstAttribute="top" secondItem="XfC-xj-8OT" secondAttribute="bottom" constant="44" id="jjH-J1-A11"/>
+                            <constraint firstItem="yaO-lm-KF4" firstAttribute="leading" secondItem="Lgf-uF-xT5" secondAttribute="leading" constant="20" id="sFM-vj-tTe"/>
+                            <constraint firstItem="Lgf-uF-xT5" firstAttribute="trailing" secondItem="XfC-xj-8OT" secondAttribute="trailing" constant="20" id="xOo-in-d5d"/>
+                            <constraint firstItem="FXS-WJ-XaB" firstAttribute="centerX" secondItem="Lgf-uF-xT5" secondAttribute="centerX" id="yR0-XC-wU1"/>
+                            <constraint firstItem="dLI-s2-E5V" firstAttribute="top" secondItem="FXS-WJ-XaB" secondAttribute="bottom" constant="62" id="ys8-bV-2BW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dq7-1p-EYl"/>
+                    <connections>
+                        <outlet property="dateOfLastWatering" destination="yaO-lm-KF4" id="hkp-ZQ-y7n"/>
+                        <outlet property="name" destination="XfC-xj-8OT" id="y9e-Bt-Tj3"/>
+                        <outlet property="textWatering" destination="RAW-jq-ETK" id="Gbx-W3-rZr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QJs-14-8d8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Frr-Cf-JYf" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2304" y="171"/>
+        </scene>
+        <!--Авторы-->
+        <scene sceneID="feN-1b-iyv">
+            <objects>
+                <tableViewController id="9gd-Vw-toA" customClass="AboutAuthorsViewController" customModule="WateringPlants" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="tOs-4X-dpq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="authorID" id="HsA-Tc-WYF">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HsA-Tc-WYF" id="FJp-03-oC1">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9gd-Vw-toA" id="9CV-0Z-zDU"/>
+                            <outlet property="delegate" destination="9gd-Vw-toA" id="QcX-GW-u2Y"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Авторы" image="person.2" catalog="system" id="jWx-LA-IHP"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V9M-UQ-oA9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1445" y="873"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="64Z-Gd-x7l">
+            <objects>
+                <navigationController id="0dA-TF-CUg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Acd-0K-Ms6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oaK-MM-8eD">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="32Z-4t-lrv" kind="relationship" relationship="rootViewController" id="6kt-ME-wbG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="07c-tf-OJi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-356" y="172"/>
+        </scene>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="Dn1-2c-F9X">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="32Z-4t-lrv" customClass="TabBarViewController" customModule="WateringPlants" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Dmw-y0-nyT"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nlK-9e-UlE">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="2se-pI-vui" kind="relationship" relationship="viewControllers" id="p1Z-id-XbT"/>
+                        <segue destination="9gd-Vw-toA" kind="relationship" relationship="viewControllers" id="wRZ-r2-pXf"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p2B-V0-1qJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="534.78260869565224" y="171.42857142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="drop" catalog="system" width="101" height="128"/>
+        <image name="person.2" catalog="system" width="128" height="81"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
